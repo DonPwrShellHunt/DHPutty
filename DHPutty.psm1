@@ -233,22 +233,6 @@ function Rename-PuttySession {
 }
 
 function New-PuttySession {
-<#
-    .SYNOPSIS
-       Create a new putty session
-    .DESCRIPTION
-       Create a new putty session from an existing one
-    .PARAMETER Name
-       Name of new Putty session to create
-    .PARAMETER HostName
-       Host name or IP address of session
-    .PARAMETER Template
-       Name of existing session to act as template for new one
-    .PARAMETER Title
-       Optional Title to be put in WinTitle property of session
-    .EXAMPLE
-       New-PuttySession -Name z_DTSqaremap02 -HostName dtsqaremap02 -Template CentrifyOrange -Title 'Whatever'
-#>
     [CmdletBinding(SupportsShouldProcess=$true)]
     Param
     (
