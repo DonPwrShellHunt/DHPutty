@@ -1,34 +1,36 @@
 ---
 Module Name: DHPutty
 Module Guid: 36a0590e-7238-4377-abb8-f52f9762a301
-Download Help Link: {{Please enter FwLink manually}}
-Help Version: {{Please enter version of help manually (X.X.X.X) format}}
+Download Help Link: http://mywebserver/help
+Help Version: 1.2.3.5
 Locale: en-US
 ---
-
 # DHPutty Module
 ## Description
-{{Manually Enter Description Here}}
+{{Manipulate PuTTY sessions using PowerShell}}
 
 ## DHPutty Cmdlets
 ### [Get-PuttySession](Get-PuttySession.md)
-{{Manually Enter Get-PuttySession Description Here}}
+{{Get-PuttySession returns sessions by Name, Hostname, or Title}}
 
 ### [Get-PuttySessionPropertySet](Get-PuttySessionPropertySet.md)
-{{Manually Enter Get-PuttySessionPropertySet Description Here}}
+{{Get-PuttySessionPropertySet returns the properties for a session}}
 
 ### [New-PuttySession](New-PuttySession.md)
-{{Manually Enter New-PuttySession Description Here}}
+{{New-PuttySession clones an existing session with new Name, Hostname, and Title }}
 
 ### [Remove-PuttySession](Remove-PuttySession.md)
-{{Manually Enter Remove-PuttySession Description Here}}
+{{Remove-PuttySession deletes an existing session}}
 
 ### [Rename-PuttySession](Rename-PuttySession.md)
-{{Manually Enter Rename-PuttySession Description Here}}
+{{Rename-PuttySession renames an existing session}}
 
 ### [Set-PuttySessionProperty](Set-PuttySessionProperty.md)
-{{Manually Enter Set-PuttySessionProperty Description Here}}
+{{Set-PuttySessionProperty sets properties of a session}}
 
 ### [Start-PuttySession](Start-PuttySession.md)
-{{Manually Enter Start-PuttySession Description Here}}
+{{Start-PuttySession will launch Putty using a specific session}}
+
+
+
 

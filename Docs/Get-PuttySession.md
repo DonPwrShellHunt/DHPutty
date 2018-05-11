@@ -27,7 +27,7 @@ Get-PuttySession [-Title] <Object> [-Property <PSObject[]>]
 ```
 
 ## DESCRIPTION
-Get Putty Session information
+Get Putty Session information as an object with properties
 
 ## EXAMPLES
 
