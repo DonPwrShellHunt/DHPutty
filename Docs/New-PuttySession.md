@@ -1,6 +1,7 @@
 ---
 external help file: DHPutty-help.xml
-online version: 
+Module Name: DHPutty
+online version:
 schema: 2.0.0
 ---
 
@@ -13,7 +14,7 @@ Create a new putty session
 
 ```
 New-PuttySession [-Name] <String> [-HostName] <String> [-Template] <String> [-Title <String>] [-WhatIf]
- [-Confirm]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,12 +22,12 @@ Create a new putty session from an existing one
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### EXAMPLE 1
 ```
 New-PuttySession -Name a1 -HostName ansible1 -Template WhiteOnOrange -Title 'Ansible 01 RHEL7'
 ```
 
-### -------------------------- EXAMPLE 2 --------------------------
+### EXAMPLE 2
 ```
 New-PuttySession -Name a2 -HostName ansible02 -Template WhiteOnOrange -Title 'Ansible 02 RHEL7'
 ```
@@ -39,7 +40,7 @@ Name of new Putty session to create
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -54,7 +55,7 @@ Host name or IP address of session
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -69,7 +70,7 @@ Name of existing session to act as template for new one
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -84,7 +85,7 @@ Optional Title to be put in WinTitle property of session
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -124,6 +125,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -131,6 +135,7 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
+
 [Get-PuttySession]()
 [Rename-PuttySession]()
 [Remove-PuttySession]()

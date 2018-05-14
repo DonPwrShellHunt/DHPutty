@@ -1,753 +1,983 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<helpItems xmlns="http://msh" schema="maml">
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-PuttySession</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>PuttySession</command:noun>
+      <maml:description>
+        <maml:para>Get Putty Session information</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Get Putty Session information as an object with properties</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-PuttySession</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Wildcard string to find session by session name</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>*</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Property</maml:name>
+          <maml:Description>
+            <maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
+          <dev:type>
+            <maml:name>PSObject[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-PuttySession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>HostName</maml:name>
+          <maml:Description>
+            <maml:para>Wildcard string to find session by HostName</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Property</maml:name>
+          <maml:Description>
+            <maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
+          <dev:type>
+            <maml:name>PSObject[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-PuttySession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Title</maml:name>
+          <maml:Description>
+            <maml:para>Wildcard string to find session by WinTitle</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Property</maml:name>
+          <maml:Description>
+            <maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
+          <dev:type>
+            <maml:name>PSObject[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Wildcard string to find session by session name</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>*</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>HostName</maml:name>
+        <maml:Description>
+          <maml:para>Wildcard string to find session by HostName</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Title</maml:name>
+        <maml:Description>
+          <maml:para>Wildcard string to find session by WinTitle</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Property</maml:name>
+        <maml:Description>
+          <maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
+        <dev:type>
+          <maml:name>PSObject[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.PSObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Three parameter sets&gt; ByName ByHost ByTitle</maml:para>
+        <maml:para>Wildcard characters are supported in Name, HostName, and Title parameters. Default behavior if no parameters are specified is to return all Putty sessions.</maml:para>
+        <maml:para>ByHost and ByTitle will look in all defined Putty sessions for a match based on specific property. If no matches are found, then no sessions are returned.</maml:para>
+        <maml:para>Return objects are [PSCustomObject} with properties: Name HostName Title IsCentrify PropertySet</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-PuttySession
 
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Get-PuttySession</command:name>
-<command:verb>Get</command:verb>
-<command:noun>PuttySession</command:noun>
-<maml:description><maml:para>Get Putty Session information
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Get Putty Session information
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Get-PuttySession</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Wildcard string to find session by session name
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>*</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Property</maml:name>
-<maml:Description><maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
-<dev:type><maml:name>PSObject[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-<command:syntaxItem><maml:name>Get-PuttySession</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>HostName</maml:name>
-<maml:Description><maml:para>Wildcard string to find session by HostName
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Property</maml:name>
-<maml:Description><maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
-<dev:type><maml:name>PSObject[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-<command:syntaxItem><maml:name>Get-PuttySession</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>Wildcard string to find session by WinTitle
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Property</maml:name>
-<maml:Description><maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
-<dev:type><maml:name>PSObject[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Wildcard string to find session by session name
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>*</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>HostName</maml:name>
-<maml:Description><maml:para>Wildcard string to find session by HostName
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>Wildcard string to find session by WinTitle
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Property</maml:name>
-<maml:Description><maml:para>Property names of Putty session to return Defaults to 'HostName','WinTitle' Use 'All' to return all properties
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
-<dev:type><maml:name>PSObject[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>('HostName','WinTitle')</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes></command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Management.Automation.PSObject</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>Three parameter sets&gt; ByName ByHost ByTitle
-</maml:para>
-<maml:para>Wildcard characters are supported in Name, HostName, and Title parameters. Default behavior if no parameters are specified is to return all Putty sessions.
-</maml:para>
-<maml:para>ByHost and ByTitle will look in all defined Putty sessions for a match based on specific property. If no matches are found, then no sessions are returned.
-</maml:para>
-<maml:para>Return objects are [PSCustomObject} with properties: Name HostName Title IsCentrify PropertySet
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>Get-PuttySession</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-<dev:code>Get-PuttySession -Name 'k_*'</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
-<dev:code>Get-PuttySession -HostName '192.*'</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 4 --------------------------</maml:title>
-<dev:code>Get-PuttySession -Title '*Apache*'</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 5 --------------------------</maml:title>
-<dev:code>Get-PuttySession -Name StdKerberos -Property All</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks></command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Get-PuttySessionPropertySet</command:name>
-<command:verb>Get</command:verb>
-<command:noun>PuttySessionPropertySet</command:noun>
-<maml:description><maml:para>Get properties associated with a Putty session
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Get properties associated with a Putty session. All properties or a subset of properties can be returned.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Get-PuttySessionPropertySet</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Session Name that properties should belong to
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Property</maml:name>
-<maml:Description><maml:para>Array of property names whose properties will be returned
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Session Name that properties should belong to
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Property</maml:name>
-<maml:Description><maml:para>Array of property names whose properties will be returned
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes></command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>PSCustomObject with properties of</maml:name>
-</dev:type>
-<maml:description><maml:para>PropertyName, PropertyType, PropertyValue
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>Requires Registry module Returns PSCustomObject collection
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>Get-PuttySessionPropertySet -Name krbExample</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-<dev:code>Get-PuttySession -Name *mgt01 | Get-PuttySessionPropertySet</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
-<dev:code>Get-PuttySessionPropertySet -Name krbExample -Property 'TermWidth','TermHeight'</dev:code>
-<dev:remarks><maml:para>PropertyName PropertyType PropertyValue ------------ ------------ ------------- TermWidth           Dword            80 TermHeight          Dword            24
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks></command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>New-PuttySession</command:name>
-<command:verb>New</command:verb>
-<command:noun>PuttySession</command:noun>
-<maml:description><maml:para>Create a new putty session
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Create a new putty session from an existing one
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>New-PuttySession</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Name of new Putty session to create
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>HostName</maml:name>
-<maml:Description><maml:para>Host name or IP address of session
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Template</maml:name>
-<maml:Description><maml:para>Name of existing session to act as template for new one
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>Optional Title to be put in WinTitle property of session
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Name of new Putty session to create
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>HostName</maml:name>
-<maml:Description><maml:para>Host name or IP address of session
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Template</maml:name>
-<maml:Description><maml:para>Name of existing session to act as template for new one
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>Optional Title to be put in WinTitle property of session
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes></command:inputTypes>
-<command:returnValues></command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>New-PuttySession -Name a1 -HostName ansible1 -Template WhiteOnOrange -Title 'Ansible 01 RHEL7'</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-<dev:code>New-PuttySession -Name a2 -HostName ansible02 -Template WhiteOnOrange -Title 'Ansible 02 RHEL7'</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Get-PuttySession</maml:linkText>
-<maml:uri></maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Rename-PuttySession</maml:linkText>
-<maml:uri></maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Remove-PuttySession</maml:linkText>
-<maml:uri></maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Set-PuttySession</maml:linkText>
-<maml:uri></maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Start-PuttySession</maml:linkText>
-<maml:uri></maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Remove-PuttySession</command:name>
-<command:verb>Remove</command:verb>
-<command:noun>PuttySession</command:noun>
-<maml:description><maml:para>Removes a named Putty Session
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Removes a named Putty Session
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Remove-PuttySession</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Wildcard string to specify which session to remove
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Wildcard string to specify which session to remove
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes></command:inputTypes>
-<command:returnValues></command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>Remove-PuttySession -Name CentMagenta</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-<dev:code>Get-PuttySession -Name 'z_*' | Remove-PuttySession</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
-<dev:code>Remove-PuttySession -Name 'kHost1','kHost2' -WhatIf</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks></command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Rename-PuttySession</command:name>
-<command:verb>Rename</command:verb>
-<command:noun>PuttySession</command:noun>
-<maml:description><maml:para>Rename a Putty Session
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Rename a Putty Session
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Rename-PuttySession</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Name of Putty session to rename Must match exactly, including case
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>NewName</maml:name>
-<maml:Description><maml:para>New Name of Putty session Validates NewName is composed of letters, numbers, and underscore characters only.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Name of Putty session to rename Must match exactly, including case
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>NewName</maml:name>
-<maml:Description><maml:para>New Name of Putty session Validates NewName is composed of letters, numbers, and underscore characters only.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes></command:inputTypes>
-<command:returnValues></command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>Rename-PuttySession -Name CentMagenta -NewName TemplateMagenta</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks></command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Set-PuttySessionProperty</command:name>
-<command:verb>Set</command:verb>
-<command:noun>PuttySessionProperty</command:noun>
-<maml:description><maml:para>Set specific properties in a Putty Session
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Set specific properties in a Putty Session
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Set-PuttySessionProperty</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>The name of the Putty Session to change
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>PropertyHash</maml:name>
-<maml:Description><maml:para>A hash table that contains Session property names and values to set. Dword properties should be numeric.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>The name of the Putty Session to change
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>PropertyHash</maml:name>
-<maml:Description><maml:para>A hash table that contains Session property names and values to set. Dword properties should be numeric.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
-<maml:Description><maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
-<maml:Description><maml:para>Prompts you for confirmation before running the cmdlet.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes></command:inputTypes>
-<command:returnValues></command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>Set-PuttySessionProperty -Name KerberosMagenta -PropertyHash @{WinTitle='Magenta';TermWidth=150;TermHeight=50}</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks></command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Start-PuttySession</command:name>
-<command:verb>Start</command:verb>
-<command:noun>PuttySession</command:noun>
-<maml:description><maml:para>Launch putty loading specific Session
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Launch putty loading specific Session
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Start-PuttySession</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Array of Session names to be started Can accept from the pipeline
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>Array of Session names to be started Can accept from the pipeline
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes></command:inputTypes>
-<command:returnValues></command:returnValues>
-<maml:alertSet><maml:alert><maml:para>Requires 'putty' to be in your path or defined as an alias which points to putty
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>Get-PuttySession -Name 'krb*' | Start-PuttySession</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-<dev:code>Start-PuttySession -Name ApacheWeb01</dev:code>
-<dev:remarks><maml:para>
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks></command:relatedLinks>
-</command:command>
+C:\Users\Don\Documents\WindowsPowerShell\Modules&gt; Get-PuttySession
+
+Name                 HostName             Title                IsCentrify
+----                 --------             -----                ----------
+kHost1               Host1                hmm                  True
+kHost11              Host1                example              True
+kHost2               Host2                example              True
+kHostTWO             Host2                example              True
+krbExample           10.10.10.10          Magenta              True
+StdKerberos                                                    True</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Get-PuttySession -Name 'k_*'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Get-PuttySession -HostName '192.*'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 4 --------------------------</maml:title>
+        <dev:code>Get-PuttySession -Title '*Apache*'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 5 --------------------------</maml:title>
+        <dev:code>Get-PuttySession -Name StdKerberos -Property All</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-PuttySessionPropertySet</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>PuttySessionPropertySet</command:noun>
+      <maml:description>
+        <maml:para>Get properties associated with a Putty session</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Get properties associated with a Putty session. All properties or a subset of properties can be returned.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-PuttySessionPropertySet</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Session Name that properties should belong to</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Property</maml:name>
+          <maml:Description>
+            <maml:para>Array of property names whose properties will be returned</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Session Name that properties should belong to</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Property</maml:name>
+        <maml:Description>
+          <maml:para>Array of property names whose properties will be returned</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PSCustomObject with properties of</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>PropertyName, PropertyType, PropertyValue</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Requires Registry module Returns PSCustomObject collection</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-PuttySessionPropertySet -Name krbExample</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Get-PuttySession -Name *mgt01 | Get-PuttySessionPropertySet</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Get-PuttySessionPropertySet -Name krbExample -Property 'TermWidth','TermHeight'</dev:code>
+        <dev:remarks>
+          <maml:para>PropertyName PropertyType PropertyValue ------------ ------------ ------------- TermWidth           Dword            80 TermHeight          Dword            24</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-PuttySession</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>PuttySession</command:noun>
+      <maml:description>
+        <maml:para>Create a new putty session</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new putty session from an existing one</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-PuttySession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Name of new Putty session to create</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>HostName</maml:name>
+          <maml:Description>
+            <maml:para>Host name or IP address of session</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>Template</maml:name>
+          <maml:Description>
+            <maml:para>Name of existing session to act as template for new one</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Title</maml:name>
+          <maml:Description>
+            <maml:para>Optional Title to be put in WinTitle property of session</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Name of new Putty session to create</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>HostName</maml:name>
+        <maml:Description>
+          <maml:para>Host name or IP address of session</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>Template</maml:name>
+        <maml:Description>
+          <maml:para>Name of existing session to act as template for new one</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Title</maml:name>
+        <maml:Description>
+          <maml:para>Optional Title to be put in WinTitle property of session</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:Description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:Description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>New-PuttySession -Name a1 -HostName ansible1 -Template WhiteOnOrange -Title 'Ansible 01 RHEL7'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>New-PuttySession -Name a2 -HostName ansible02 -Template WhiteOnOrange -Title 'Ansible 02 RHEL7'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Get-PuttySession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Rename-PuttySession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Remove-PuttySession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-PuttySession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Start-PuttySession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-PuttySession</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>PuttySession</command:noun>
+      <maml:description>
+        <maml:para>Removes a named Putty Session</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Removes a named Putty Session</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-PuttySession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Wildcard string to specify which session to remove</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Wildcard string to specify which session to remove</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:Description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:Description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Remove-PuttySession -Name CentMagenta</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Get-PuttySession -Name 'z_*' | Remove-PuttySession</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Remove-PuttySession -Name 'kHost1','kHost2' -WhatIf</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Rename-PuttySession</command:name>
+      <command:verb>Rename</command:verb>
+      <command:noun>PuttySession</command:noun>
+      <maml:description>
+        <maml:para>Rename a Putty Session</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Rename a Putty Session</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Rename-PuttySession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Name of Putty session to rename Must match exactly, including case</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>NewName</maml:name>
+          <maml:Description>
+            <maml:para>New Name of Putty session Validates NewName is composed of letters, numbers, and underscore characters only.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Name of Putty session to rename Must match exactly, including case</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>NewName</maml:name>
+        <maml:Description>
+          <maml:para>New Name of Putty session Validates NewName is composed of letters, numbers, and underscore characters only.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:Description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:Description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Rename-PuttySession -Name CentMagenta -NewName TemplateMagenta</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-PuttySessionProperty</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>PuttySessionProperty</command:noun>
+      <maml:description>
+        <maml:para>Set specific properties in a Putty Session</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Set specific properties in a Putty Session</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-PuttySessionProperty</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>The name of the Putty Session to change</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>PropertyHash</maml:name>
+          <maml:Description>
+            <maml:para>A hash table that contains Session property names and values to set. Dword properties should be numeric.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+          <dev:type>
+            <maml:name>Hashtable</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>The name of the Putty Session to change</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>PropertyHash</maml:name>
+        <maml:Description>
+          <maml:para>A hash table that contains Session property names and values to set. Dword properties should be numeric.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+        <dev:type>
+          <maml:name>Hashtable</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:Description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:Description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Set-PuttySessionProperty -Name KerberosMagenta -PropertyHash @{WinTitle='Magenta';TermWidth=150;TermHeight=50}</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Start-PuttySession</command:name>
+      <command:verb>Start</command:verb>
+      <command:noun>PuttySession</command:noun>
+      <maml:description>
+        <maml:para>Launch putty loading specific Session</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Launch putty loading specific Session</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Start-PuttySession</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Array of Session names to be started Can accept from the pipeline</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Array of Session names to be started Can accept from the pipeline</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Requires 'putty' to be in your path or defined as an alias which points to putty</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-PuttySession -Name 'krb*' | Start-PuttySession</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Start-PuttySession -Name ApacheWeb01</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
 </helpItems>

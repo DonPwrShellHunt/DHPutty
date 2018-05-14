@@ -1,6 +1,7 @@
 ---
 external help file: DHPutty-help.xml
-online version: 
+Module Name: DHPutty
+online version:
 schema: 2.0.0
 ---
 
@@ -12,7 +13,7 @@ Set specific properties in a Putty Session
 ## SYNTAX
 
 ```
-Set-PuttySessionProperty [-Name] <String> [-PropertyHash] <Hashtable> [-WhatIf] [-Confirm]
+Set-PuttySessionProperty [-Name] <String> [-PropertyHash] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,7 +21,7 @@ Set specific properties in a Putty Session
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### EXAMPLE 1
 ```
 Set-PuttySessionProperty -Name KerberosMagenta -PropertyHash @{WinTitle='Magenta';TermWidth=150;TermHeight=50}
 ```
@@ -33,7 +34,7 @@ The name of the Putty Session to change
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -50,7 +51,7 @@ Dword properties should be numeric.
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -90,6 +91,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -97,4 +101,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

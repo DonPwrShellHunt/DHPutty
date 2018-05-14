@@ -5,8 +5,8 @@
     {{ DHPutty helps manage Putty Sessions }}
 
 LONG DESCRIPTION
-    {{ DHPutty manipulates PuttySession objects stored in the registry. 
-    A group of settings called a PuttySessionPropertySet has get and set operations.}}
+    {{ DHPutty supports PuttySession operations of get, new, rename, remove, and
+    start.  PuttySessionPropertySet object operations include get & set }}
 
 Optional Subtopics
     {{ Optional Subtopic Placeholder }}
