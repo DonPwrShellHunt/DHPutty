@@ -158,10 +158,11 @@
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para>Three parameter sets&gt; ByName ByHost ByTitle</maml:para>
+        <maml:para>Three parameter sets&gt;</maml:para>
+        <maml:para>1. ByName 1. ByHost 1. ByTitle</maml:para>
         <maml:para>Wildcard characters are supported in Name, HostName, and Title parameters. Default behavior if no parameters are specified is to return all Putty sessions.</maml:para>
         <maml:para>ByHost and ByTitle will look in all defined Putty sessions for a match based on specific property. If no matches are found, then no sessions are returned.</maml:para>
-        <maml:para>Return objects are [PSCustomObject} with properties: Name HostName Title IsCentrify PropertySet</maml:para>
+        <maml:para>Return objects are [PSCustomObject] with properties: Name HostName Title IsCentrify PropertySet</maml:para>
       </maml:alert>
     </maml:alertSet>
     <command:examples>

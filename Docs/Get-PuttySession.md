@@ -8,36 +8,42 @@ schema: 2.0.0
 # Get-PuttySession
 
 ## SYNOPSIS
+
 Get Putty Session information
 
 ## SYNTAX
 
 ### ByName (Default)
-```
+
+```powershell
 Get-PuttySession [[-Name] <Object>] [-Property <PSObject[]>] [<CommonParameters>]
 ```
 
 ### ByHost
-```
+
+```powershell
 Get-PuttySession [-HostName] <Object> [-Property <PSObject[]>] [<CommonParameters>]
 ```
 
 ### ByTitle
-```
+
+```powershell
 Get-PuttySession [-Title] <Object> [-Property <PSObject[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Get Putty Session information as an object with properties
 
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```powershell
 Get-PuttySession
 ```
 
-```
+```powershell
 C:\Users\Don\Documents\WindowsPowerShell\Modules> Get-PuttySession
 
 Name                 HostName             Title                IsCentrify
@@ -51,28 +57,33 @@ StdKerberos                                                    True
 ```
 
 ### EXAMPLE 2
-```
+
+```powershell
 Get-PuttySession -Name 'k_*'
 ```
 
 ### EXAMPLE 3
-```
+
+```powershell
 Get-PuttySession -HostName '192.*'
 ```
 
 ### EXAMPLE 4
-```
+
+```powershell
 Get-PuttySession -Title '*Apache*'
 ```
 
 ### EXAMPLE 5
-```
+
+```powershell
 Get-PuttySession -Name StdKerberos -Property All
 ```
 
 ## PARAMETERS
 
 ### -Name
+
 Wildcard string to find session by session name
 
 ```yaml
@@ -88,6 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -HostName
+
 Wildcard string to find session by HostName
 
 ```yaml
@@ -103,6 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
+
 Wildcard string to find session by WinTitle
 
 ```yaml
@@ -118,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Property names of Putty session to return
 Defaults to 'HostName','WinTitle'
 Use 'All' to return all properties
@@ -135,6 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -144,10 +159,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Management.Automation.PSObject
 
 ## NOTES
+
 Three parameter sets\>
-ByName
-ByHost
-ByTitle
+
+1. ByName
+1. ByHost
+1. ByTitle
 
 Wildcard characters are supported in Name, HostName, and Title
 parameters.
@@ -159,7 +176,7 @@ a match based on specific property.
 If no matches are found,
 then no sessions are returned.
 
-Return objects are \[PSCustomObject} with properties:
+Return objects are [PSCustomObject] with properties:
 Name
 HostName
 Title

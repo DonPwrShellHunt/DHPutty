@@ -1,25 +1,30 @@
 ﻿# DHPutty
+
 ## about_DHPutty
 
-```              
-
 # SHORT DESCRIPTION
-{{ DHPutty helps manage Putty Sessions }}
 
-```
+DHPutty helps manage PuTTY Sessions
 
 # LONG DESCRIPTION
-{{ DHPutty supports PuttySession operations of get, new, rename, remove, and start. 
-PuttySessionPropertySet object operations include get & set }}
 
-## Optional Subtopics
-{{ Optional Subtopic Placeholder }}
+DHPutty supports PuTTYSession operations of get, new, rename, remove, and start. 
+
+PuttySessionPropertySet object operations include get & set.
+
+## PuTTY VERSIONS
+In addition to the standard PuTTY versions, this module can also handle Centrify PuTTY. Centrify adds an 
+extra set of properties relating to Kerboros connectivity.
 
 # EXAMPLES
-{{ Code or descriptive examples of how to leverage the functions described. }}
+PS> 
 
 # NOTE
-{{ Note Placeholder - Additional information that a user needs to know.}}
+Either an executable or PowerShell alias by the name of putty must be available in order for the Start-PuttySession 
+cmdlet to function properly. To confirm this, run the command>
+```powershell
+Get-Command putty
+```
 
 # TROUBLESHOOTING NOTE
 {{ Troubleshooting Placeholder - Warns users of bugs}}
@@ -37,4 +42,4 @@ PuttySessionPropertySet object operations include get & set }}
 - {{ Keyword Placeholder }}
 - {{ Keyword Placeholder }}
 - {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}    
+- {{ Keyword Placeholder }}
