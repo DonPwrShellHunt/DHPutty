@@ -8,38 +8,28 @@ DHPutty helps manage PuTTY Sessions
 
 # LONG DESCRIPTION
 
-DHPutty supports PuTTYSession operations of get, new, rename, remove, and start. 
+DHPutty supports PuTTYSession operations of get, new, rename, remove, and start.
 
 PuttySessionPropertySet object operations include get & set.
 
 ## PuTTY VERSIONS
-In addition to the standard PuTTY versions, this module can also handle Centrify PuTTY. Centrify adds an 
-extra set of properties relating to Kerboros connectivity.
+In addition to the standard PuTTY versions, this module can also handle Centrify PuTTY. Centrify adds an extra set of properties relating to Kerboros connectivity.
 
 # EXAMPLES
-PS> 
+PS> Get-PuttySession -Hostname "*apache*" | Start-PuttySession
+PS> Get-PuttySession -Name WhiteOnOrange -Property All | Export-CliXML -Path WhiteOnOrange.clixml
 
 # NOTE
-Either an executable or PowerShell alias by the name of putty must be available in order for the Start-PuttySession 
+Either an executable or PowerShell alias by the name of putty must be available in order for the Start-PuttySession
 cmdlet to function properly. To confirm this, run the command>
-```powershell
+```
 Get-Command putty
 ```
 
 # TROUBLESHOOTING NOTE
-{{ Troubleshooting Placeholder - Warns users of bugs}}
-
-{{ Explains behavior that is likely to change with fixes }}
+The DHPutty module uses registry cmdlets that are generated using CDXML.
 
 # SEE ALSO
-{{ See also placeholder }}
-
-{{ You can also list related articles, blogs, and video URLs. }}
+Various other PuTTY modules are in the PowerShellGallery which may be of interest.
 
 # KEYWORDS
-{{List alternate names or titles for this topic that readers might use.}}
-
-- {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}

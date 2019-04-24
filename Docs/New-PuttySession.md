@@ -18,7 +18,8 @@ New-PuttySession [-Name] <String> [-HostName] <String> [-Template] <String> [-Ti
 ```
 
 ## DESCRIPTION
-Create a new putty session from an existing one
+Create a new putty session from an existing one. The name of the PuttySession is unique and a stored session consists of about 200
+configuration properties and values that are stored in the user section of the registry (HKCU). The PuTTY application and DHPutty cmdlets use exactly the same sessions, which means you can choose to alter any saved session properties via the PuTTY Configuration GUI.
 
 ## EXAMPLES
 
@@ -126,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -136,8 +137,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-PuttySession]()
-[Rename-PuttySession]()
-[Remove-PuttySession]()
-[Set-PuttySession]()
-[Start-PuttySession]()
+[Get-PuttySession]
+[Rename-PuttySession]
+[Remove-PuttySession]
+[Set-PuttySession]
+[Start-PuttySession]
