@@ -137,8 +137,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-PuttySession]
-[Rename-PuttySession]
-[Remove-PuttySession]
-[Set-PuttySession]
-[Start-PuttySession]
+[Get-PuttySession]()
+[Rename-PuttySession]()
+[Remove-PuttySession]()
+[Set-PuttySession]()
+[Start-PuttySession]()
