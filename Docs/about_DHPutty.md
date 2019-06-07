@@ -8,28 +8,44 @@ DHPutty helps manage PuTTY Sessions
 
 # LONG DESCRIPTION
 
-DHPutty supports PuTTYSession operations of get, new, rename, remove, and start.
+DHPutty supports PuTTYSession operations of get, new, rename, remove, and start. A PuTTYSession object represents an instance that maps to a stored session in HKCU, which contains over 200 properties and values. The Start-PuTTYSession can be thought of as starting a PuTTY process from the referenced stored session configuration.
 
-PuttySessionPropertySet object operations include get & set.
+PuttySessionPropertySet object operations include get & set. Initially, the PuttySessionPropertySet functions were going to be private, but exporting them makes it easier for PowerShell scripters to manipulate configuration sets to extend functionality. This could take the form of persisting property sets in files, defining color themes, or possibly authentication options.
+
+The New-PuttySession function uses an existing stored session as the template for creating a new one. The primary properties given to New-PuttySession overwrite the corresponding template properties.
+
+ When storing a new session via the PuTTY GUI it is common to use the hostname as the name of the session, but the matching ability of Get-PuttySession allows the name (and Title) to convey any additional information you might find useful. So, in addition to finding and starting up sessions where hostnames match a certain pattern, you can extend that to matching session names, or matching Titles.
+
+By incorporating the Title (WinTitle) as a PuttySession property, you can easily map running PuTTY processes via the WinTitle in a process.
+
+```
+PS> Get-Process -Name Putty | where WinTitle -like '*created by DHPutty*'
+```
 
 ## PuTTY VERSIONS
-In addition to the standard PuTTY versions, this module can also handle Centrify PuTTY. Centrify adds an extra set of properties relating to Kerboros connectivity.
+In addition to the standard PuTTY versions, this module can also handle Centrify PuTTY. Centrify adds an extra set of properties relating to Kerboros connectivity. The IsCentrify property denotes whether this is a Centrify or standard PuTTY session configuration.
 
 # EXAMPLES
+```
 PS> Get-PuttySession -Hostname "*apache*" | Start-PuttySession
-PS> Get-PuttySession -Name WhiteOnOrange -Property All | Export-CliXML -Path WhiteOnOrange.clixml
+PS> Get-PuttySession -Name BlackOnPink -Property All
+```
 
-# NOTE
+# TROUBLESHOOTING NOTE
 Either an executable or PowerShell alias by the name of putty must be available in order for the Start-PuttySession
-cmdlet to function properly. To confirm this, run the command>
+cmdlet to function properly. To confirm this, make sure PuTTY is output when the following command is run>
 ```
 Get-Command putty
 ```
 
-# TROUBLESHOOTING NOTE
-The DHPutty module uses registry cmdlets that are generated using CDXML.
+# NOTE
+The DHPutty module uses registry cmdlets that are generated using CDXML. The registry.csxml is only slightly modified from the one presented by Richard Siddaway in the Scripting Guys series.
+
+The PlatyPS module is used on the markdown file in Docs to produce the actual external documentaion in the en-us folder of the module. Comment based help in DHPutty.psm1 for the functions will be removed in the near future. From with the DHPutty folder the following command is used to refresh the external help files>
+
+```
+New-ExternalHelp .\Docs -OutputPath en-US\ -Force
+```
 
 # SEE ALSO
 Various other PuTTY modules are in the PowerShellGallery which may be of interest.
-
-# KEYWORDS

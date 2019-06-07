@@ -333,7 +333,7 @@ StdKerberos                                                    True</dev:code>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Create a new putty session from an existing one</maml:para>
+      <maml:para>Create a new putty session from an existing one. The name of the PuttySession is unique and a stored session consists of about 200 configuration properties and values that are stored in the user section of the registry (HKCU). The PuTTY application and DHPutty cmdlets use exactly the same sessions, which means you can choose to alter any saved session properties via the PuTTY Configuration GUI.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
