@@ -17,7 +17,7 @@
                         <Width>20</Width>
                     </TableColumnHeader>
                     <TableColumnHeader>
-                        <Label>Title</Label>
+                        <Label>WinTitle</Label>
                         <Width>20</Width>
                     </TableColumnHeader>                    
                     <TableColumnHeader>
@@ -36,7 +36,7 @@
                                 <PropertyName>HostName</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
-                                <PropertyName>Title</PropertyName>
+                                <PropertyName>WinTitle</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
                                 <PropertyName>IsCentrify</PropertyName>

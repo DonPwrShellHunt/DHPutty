@@ -30,7 +30,3 @@ Locale: en-US
 
 ### [Start-PuttySession](Start-PuttySession.md)
 {{Start-PuttySession will launch Putty using a specific session}}
-
-
-
-

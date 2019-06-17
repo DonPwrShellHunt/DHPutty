@@ -16,10 +16,10 @@ The New-PuttySession function uses an existing stored session as the template fo
 
  When storing a new session via the PuTTY GUI it is common to use the hostname as the name of the session, but the matching ability of Get-PuttySession allows the name (and Title) to convey any additional information you might find useful. So, in addition to finding and starting up sessions where hostnames match a certain pattern, you can extend that to matching session names, or matching Titles.
 
-By incorporating the Title (WinTitle) as a PuttySession property, you can easily map running PuTTY processes via the WinTitle in a process.
+By incorporating the WinTitle as a PuttySession property, you can easily map running PuTTY processes via the MainWindowTitle in a System.Diagnostics.Process.
 
 ```
-PS> Get-Process -Name Putty | where WinTitle -like '*created by DHPutty*'
+PS> Get-Process -Name Putty | where MainWindowTitle -like '*created by DHPutty*'
 ```
 
 ## PuTTY VERSIONS

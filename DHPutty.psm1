@@ -8,7 +8,7 @@
        Wildcard string to find session by session name  
     .PARAMETER HostName
        Wildcard string to find session by HostName
-    .PARAMETER Title
+    .PARAMETER WinTitle
        Wildcard string to find session by WinTitle
     .PARAMETER Property
        Property names of Putty session to return
@@ -21,7 +21,7 @@
     .EXAMPLE
        Get-PuttySession -HostName '192.*'
     .EXAMPLE
-       Get-PuttySession -Title '*Apache*'
+       Get-PuttySession -WinTitle '*Apache*'
     .EXAMPLE
        Get-PuttySession -Name StdKerberos -Property All
     .NOTES
@@ -30,7 +30,7 @@
         ByHost
         ByTitle
     
-        Wildcard characters are supported in Name, HostName, and Title
+        Wildcard characters are supported in Name, HostName, and WinTitle
         parameters. Default behavior if no parameters are specified is
         to return all Putty sessions.
     
@@ -41,7 +41,7 @@
         Return objects are [PSCustomObject} with properties:
         Name
         HostName
-        Title
+        WinTitle
         IsCentrify
         PropertySet
 
@@ -65,7 +65,7 @@
         [Parameter(Mandatory=$true,
                    ParameterSetName='ByTitle',
                    Position=0)]
-        $Title,
+        $WinTitle,
         
         [Parameter(Mandatory=$false)]
         [PSObject[]] $Property = ('HostName','WinTitle')
@@ -83,9 +83,9 @@
             $matchPropName = 'HostName'
             $matchPropValue = $HostName 
         }
-        if ($Title) {
+        if ($WinTitle) {
             $matchPropName = 'WinTitle'
-            $matchPropValue = $Title
+            $matchPropValue = $WinTitle
         }
 
         if ($matchedSessions.Count -ne 0) {
@@ -104,7 +104,7 @@
                 $objhash = [ordered] @{
                     Name=$ms.PSChildName
                     HostName=$ms.GetValue('HostName')
-                    Title=$ms.GetValue('WinTitle')
+                    WinTitle=$ms.GetValue('WinTitle')
                     IsCentrify=($ms.Property -contains 'DoKerberos')
                     PropertySet=$pset
                 }
@@ -253,7 +253,7 @@ function New-PuttySession {
 
         # Title is WindowTitle content in session
         [Parameter(Mandatory=$false)]
-        [String]$Title=''
+        [String]$WinTitle=''
     )
 
     Begin {
@@ -280,7 +280,7 @@ function New-PuttySession {
         if ($PSCmdlet.ShouldProcess($Name)) {
             Copy-Item -LiteralPath $srcSession.PSPath -Destination $newSessionPath
             Set-ItemProperty -Path $newSessionPath -Name HostName -Value $HostName
-            Set-ItemProperty -Path $newSessionPath -Name WinTitle -Value $Title
+            Set-ItemProperty -Path $newSessionPath -Name WinTitle -Value $WinTitle
         }
     }
 
