@@ -334,107 +334,92 @@ function Start-PuttySession {
     }
 }
 
+
 function Get-PuttySessionPropertySet {
-<#
-    .SYNOPSIS
-        Get properties associated with a Putty session
-    .DESCRIPTION
-        Get properties associated with a Putty session.
-        All properties or a subset of properties can be returned.
-    .PARAMETER Name
-        Session Name that properties should belong to
-    .PARAMETER Property
-        Array of property names whose properties will be returned
-    .OUTPUTS
-        PSCustomObject with properties of
-        PropertyName, PropertyType, PropertyValue
-    .EXAMPLE
-        Get-PuttySessionPropertySet -Name krbExample
-    .EXAMPLE
-        Get-PuttySession -Name *mgt01 | Get-PuttySessionPropertySet
-    .EXAMPLE
-        Get-PuttySessionPropertySet -Name krbExample -Property 'TermWidth','TermHeight'
-
-        PropertyName PropertyType PropertyValue
-        ------------ ------------ -------------
-        TermWidth           Dword            80
-        TermHeight          Dword            24
-    .NOTES
-        Requires Registry module
-        Returns PSCustomObject collection
-#>
-    [CmdletBinding(DefaultParameterSetName='All')]
-    param
-    (
-        [Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
-        [System.String]
-        $Name,
-        [Parameter(Mandatory=$true,ParameterSetName='Subset')]
-        [System.String[]]
-        $Property
-    )
-
-    Begin {
-        Write-Verbose -Message ('In Begin Block, Processing ParameterSetName: {0}' -f $PSCmdlet.ParameterSetName)
-        $nofilter = $PSCmdlet.ParameterSetName -eq 'All'
-    }
-
-    Process {
-        Write-Verbose -Message ('In Process Block, ParameterSetName: {0}' -f $PSCmdlet.ParameterSetName)
-
-        $puttypath = 'Software\SimonTatham\PuTTY\Sessions'
-        # get the Sessions that are defined in the HKCU hive
-        $slist = (Get-RegistryKey -Hive HKCU -SubKey $puttypath).sNames
-        if ($slist -contains $Name) {
-            $subkeypath = Join-Path -Path $puttypath -ChildPath $Name
-            # Following gets all property names and types associated with session
-            $pi = Get-RegistryValue -Hive HKCU -SubKey $subkeypath
-            $cnt = $pi.sNames.Count - 1
-            
-            # loop through all properties via parallel names,types getting property values
-            0..$cnt | 
-            ForEach-Object {
-                $propName = $pi.sNames[$psitem]
-                $propType = $pi.Types[$psitem]
-                switch ($propType)
-                {
-                    'String'  { 
-                        $pv = (Get-RegistrySTRING -Hive HKCU -SubKey $subkeypath -ValueName $propName).sValue
-                    }
-                    
-                    'Dword'   {
-                        $pv = (Get-RegistryDWORD -Hive HKCU -SubKey $subkeypath -ValueName $propName).uValue
-                    }
-                    
-                    default   { 
-                        Write-Warning -Message ('For PropertyName: {0} Unhandled Type: {1}' -f $propName,$propType)
-                        $pv = ''
-                    }
-                }
-                
-                if ($nofilter -or ($Property -contains $propName)) {
-                    
-                    $objhash = @{
-                        PropertyName = $propName
-                        PropertyType = $propType
-                        PropertyValue = $pv
-                    }
-                    $obj = New-Object -TypeName PSObject -Property $objhash
-                    $obj.PSObject.TypeNames.Insert(0,'DonHunt.Putty.Session.PropertySetItem')
-                    Write-Output -InputObject $obj
-                }
-                
-            }
-            
-        } else {
-            Write-Warning -Message ('{0} is an invalid session name' -f $Name)
+    <#
+        .SYNOPSIS
+            Get properties associated with a Putty session
+        .DESCRIPTION
+            Get properties associated with a Putty session.
+            All properties or a subset of properties can be returned.
+        .PARAMETER Name
+            Session Name that properties should belong to
+        .PARAMETER Property
+            Array of property names whose properties will be returned
+        .OUTPUTS
+            PSCustomObject with properties of
+            PropertyName, PropertyType, PropertyValue
+        .EXAMPLE
+            Get-PuttySessionPropertySet -Name krbExample
+        .EXAMPLE
+            Get-PuttySession -Name *mgt01 | Get-PuttySessionPropertySet
+        .EXAMPLE
+            Get-PuttySessionPropertySet -Name krbExample -Property 'TermWidth','TermHeight'
+    
+            PropertyName PropertyType PropertyValue
+            ------------ ------------ -------------
+            TermWidth           Dword            80
+            TermHeight          Dword            24
+        .NOTES
+            Requires Registry module
+            Returns PSCustomObject collection
+    #>
+        [CmdletBinding(DefaultParameterSetName='All')]
+        param
+        (
+            [Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
+            [System.String]
+            $Name,
+            [Parameter(Mandatory=$true,ParameterSetName='Subset')]
+            [System.String[]]
+            $Property
+        )
+    
+        Begin {
+            Write-Verbose -Message ('In Begin Block, Processing ParameterSetName: {0}' -f $PSCmdlet.ParameterSetName)
+            $nofilter = $PSCmdlet.ParameterSetName -eq 'All'
+            $puttypath = 'HKCU:\Software\SimonTatham\PuTTY\Sessions'
+    
         }
-    }
-
-    End {
-        Write-Verbose -Message ('In End Block, ParameterSetName: {0}' -f $PSCmdlet.ParameterSetName)
-
-    }
+    
+        Process {
+            Write-Verbose -Message ('In Process Block, ParameterSetName: {0}' -f $PSCmdlet.ParameterSetName)
+    
+            # get the Sessions that are defined in the HKCU hive
+            $slist = (Get-Item -Path $puttypath).GetSubKeyNames()
+            if ($slist -contains $Name) {
+                $subkeypath = Join-Path -Path $puttypath -ChildPath $Name
+                # Following gets all property names and types associated with session
+                $pi = Get-Item -Path $subkeypath
+                
+                # loop through all properties via parallel names,types getting property values
+                foreach ($propname in $pi.GetValueNames() ) {
+                    $propType = $pi.GetValueKind($propname)
+                    $pv = $pi.GetValue($propname)
+                    
+                    if ($nofilter -or ($Property -contains $propName)) {
+                        
+                        $objhash = @{
+                            PropertyName = $propName
+                            PropertyType = $propType
+                            PropertyValue = $pv
+                        }
+                        $obj = New-Object -TypeName PSObject -Property $objhash
+                        $obj.PSObject.TypeNames.Insert(0,'DonHunt.Putty.Session.PropertySetItem')
+                        Write-Output -InputObject $obj
+                    }
+                    
+                }
+                
+            } else {
+                Write-Warning -Message ('{0} is an invalid session name' -f $Name)
+            }
+        }
+    
+        End {
+            Write-Verbose -Message ('In End Block, ParameterSetName: {0}' -f $PSCmdlet.ParameterSetName)
+    
+        }
 }
 
 function Set-PuttySessionProperty {
@@ -469,7 +454,7 @@ function Set-PuttySessionProperty {
     )
 
     Begin {
-        $puttypath = 'Software\SimonTatham\PuTTY\Sessions'
+        $puttypath = 'HKCU:\Software\SimonTatham\PuTTY\Sessions'
         $subkeypath = Join-Path -Path $puttypath -ChildPath $Name
 
         $allprops = @(Get-PuttySessionPropertySet -Name $Name)
@@ -492,14 +477,14 @@ function Set-PuttySessionProperty {
             {
                 'String'  {
                     [String]$value = $PropertyHash[$k]
-                    if ($PSCmdlet.ShouldProcess($k)) { 
-                        $rv = Set-RegistrySTRING -Hive HKCU -SubKey $subkeypath -ValueName $k -Value $value -Verbose
+                    if ($PSCmdlet.ShouldProcess($k)) {
+                        $rv = Set-ItemProperty -Path $subkeypath -Name $k -Value $value -Verbose
                     }
                 }
                 
                 'Dword'   {
                     if ($PSCmdlet.ShouldProcess($k)) {
-                        $rv = Set-RegistryDWORD -Hive HKCU -SubKey $subkeypath -ValueName $k -Value $PropertyHash[$k] -Verbose
+                        $rv = Set-ItemProperty -Path $subkeypath -Name $k -Value $PropertyHash[$k] -Verbose
                     }
                 }
                 

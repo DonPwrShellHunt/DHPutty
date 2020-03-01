@@ -12,7 +12,7 @@
 RootModule = 'DHPutty.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.4.1'
+ModuleVersion = '1.4.2'
 
 # ID used to uniquely identify this module
 GUID = '36a0590e-7238-4377-abb8-f52f9762a301'
@@ -63,10 +63,8 @@ PowerShellVersion = '3.0'
 FormatsToProcess = @('DHPutty.ps1xml')
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @(
-        'registry.cdxml'
-    )
-
+NestedModules = @()
+        
 # Functions to export from this module
 FunctionsToExport = @(
         'Get-PuttySession',
