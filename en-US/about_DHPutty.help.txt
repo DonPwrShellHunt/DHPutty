@@ -24,10 +24,11 @@ LONG DESCRIPTION
     useful. So, in addition to finding and starting up sessions where hostnames
     match a certain pattern, you can extend that to matching session names, or
     matching Titles.
-    By incorporating the Title (WinTitle) as a PuttySession property, you can
-    easily map running PuTTY processes via the WinTitle in a process.
+    By incorporating the WinTitle as a PuttySession property, you can easily map
+    running PuTTY processes via the MainWindowTitle in a
+    System.Diagnostics.Process.
 
-    PS> Get-Process -Name Putty | where WinTitle -like '*created by DHPutty*'
+    PS> Get-Process -Name Putty | where MainWindowTitle -like '*created by DHPutty*'
 
 PuTTY VERSIONS
     In addition to the standard PuTTY versions, this module can also handle
